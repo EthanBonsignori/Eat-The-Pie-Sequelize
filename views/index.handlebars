@@ -1,0 +1,37 @@
+<div class="background">
+  <image class="centered"
+         src="/assets/images/pie_logo.png" 
+         alt="juicy pie" 
+         style="width:400px; height:400px;">
+  </image>
+  <h1 class="title">Eat the Pie</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      {{> forms/form-block}}
+    </div>
+    <div class="col-6">
+      <h1 class="text-center">Pies</h1>
+        <ul style="list-style: none;">
+          {{#each pies}}
+            {{#unless devoured}}
+              {{> pies/pie-block devoured=true}}
+            {{/unless}}
+          {{/each}}
+        </ul>
+    </div>
+    <div class="col-6">
+      <h1 class="text-center">Devoured</h1>
+        <ul class="devoured" style="list-style: none;">
+          {{#each pies}}
+            {{#if devoured}}
+              {{> pies/pie-block devoured=false}}
+            {{/if}}
+          {{/each}}
+        </ul>
+    </div>
+  </div>
+</div>
+
+</div>

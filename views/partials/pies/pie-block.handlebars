@@ -1,0 +1,23 @@
+<li class="pie">
+  <div class="row">
+    <div class="col-7">
+      <span class="pie-name">{{pie_name}}</span>
+    </div>
+    {{#if devoured}}
+      <div class="col-5">
+        <button type="button" class="btn btn-sm btn-warning change-devoured" id="{{id}}" state="{{devoured}}">
+          Devour
+        </button>
+        <button type="button" class="btn btn-sm btn-danger delete-pie" id="{{id}}">
+          Delete
+        </button>
+      </div>
+    {{/if}}
+    {{#unless devoured}}
+    <div class="offset-2"><!-- Empty Spacer --></div>
+      <button type="button" class="btn btn-sm btn-danger delete-pie" id="{{id}}">
+        Delete
+      </button>
+    {{/unless}}
+  </div>
+</li>
